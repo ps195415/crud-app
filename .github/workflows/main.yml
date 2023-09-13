@@ -26,6 +26,8 @@ jobs:
 
       - name: Build
         run: npm run build
+      - name: Test  
+        run: npm test 
 
       - name: Push new version
         run: git push
@@ -35,10 +37,8 @@ jobs:
 
       - name: Build Docker image
         run: docker build . --file Dockerfile --tag 0nar/crud-app:latest
-#replace victoriamartinsahagun with your DockerHub username
-#replace vueapp with the image name
+      
 
       - name: Push to Docker Hub
         run: docker push 0nar/crud-app:latest
-#replace victoriamartinsahagun with your DockerHub username
-#replace vueapp with the image name
+

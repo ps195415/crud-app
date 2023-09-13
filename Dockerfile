@@ -1,11 +1,8 @@
+# build stage
 FROM node:lts-alpine as build-stage
-# Add a work directory
 WORKDIR /app
-# Cache and Install dependencies
-COPY package.json .
-COPY package-lock.json .
+COPY package*.json ./
 RUN npm install
-# Copy app files
 COPY . .
 RUN npm run build
 
