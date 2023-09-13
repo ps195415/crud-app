@@ -35,12 +35,13 @@ jobs:
         run: |
           npm install
       # build and test the apps
-      - name: build
+      - run: npm ci
+
+      - name: build App
         run: npm run build
-      - name: Test
-        run: CI=true npm test
-        env:
-          CI: true
+
+      - name: Test App
+        run: npm test
           
   push_to_Docker_Hub:
     # The type of runner that the job will run on
