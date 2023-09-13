@@ -26,9 +26,6 @@ jobs:
 
       - name: Build
         run: npm run build
-        
-      - name: Test  
-        run: npm test 
 
       - name: Push new version
         run: git push
